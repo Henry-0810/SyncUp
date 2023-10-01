@@ -1,15 +1,18 @@
 extends layout 
 
 block content
-    div.mx-auto.d-flex.flex-column.justify-content-center.align-items-center
-        form
-        fieldset
-        div.w-25.text-center
-            legend.fw-bold Login
-            .form-group
-            input#exampleInputEmail1.form-control.mt-2(type='email', aria-describedby='emailHelp', placeholder='Enter email', required='')
-            .form-group
-            input#exampleInputPassword1.form-control.mt-2(type='password', placeholder='Password', autocomplete='off', required='')
-            button.btn.btn-success.mt-3(type='submit') Login
-            hr
-            button.btn.btn-info(type='button') Create new account
+   div.container-fluid
+    div.row.justify-content-center.mt-5
+        div.col-md-6.col-sm-12
+        div.m-auto.d-flex.flex-column.justify-content-center.align-items-center.border.border-1.rounded.border-dark.text-center
+            form
+            fieldset
+                div.form-group.m-3
+                    legend.fw-bold Login
+                    .form-group
+                        input#exampleInputEmail1.form-control.mt-2(type='email', aria-describedby='emailHelp', placeholder='Enter email', required='')
+                    .form-group
+                        input#exampleInputPassword1.form-control.mt-2(type='password', placeholder='Password', autocomplete='off', required='')
+                    button.btn.btn-success.mt-3(type='submit') Login
+                    hr
+                    button.btn.btn-info(type='button') Create new account
