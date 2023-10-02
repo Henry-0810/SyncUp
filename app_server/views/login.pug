@@ -1,18 +1,17 @@
 extends layout 
 
 block content
-   div.container-fluid
-    div.row.justify-content-center.mt-5
-        div.col-md-6.col-sm-12
-        div.m-auto.d-flex.flex-column.justify-content-center.align-items-center.border.border-1.rounded.border-dark.text-center
-            form
-            fieldset
-                div.form-group.m-3
-                    legend.fw-bold Login
-                    .form-group
-                        input#exampleInputEmail1.form-control.mt-2(type='email', aria-describedby='emailHelp', placeholder='Enter email', required='')
-                    .form-group
-                        input#exampleInputPassword1.form-control.mt-2(type='password', placeholder='Password', autocomplete='off', required='')
-                    button.btn.btn-success.mt-3(type='submit') Login
+  div.container-fluid
+    div.row.justify-content-center.m-5
+        div.col-md-6.col-sm-12.d-flex.flex-column.justify-content-center.align-items-center
+            form.border.border-1.rounded.text-center
+                div.m-5
+                    fieldset
+                    legend.fw-bold.mb-4 Login
+                    .form-group.m-3
+                        input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email', required='')
+                    .form-group.m-3
+                        input#exampleInputPassword1.form-control(type='password', placeholder='Password', autocomplete='off', required='')
+                    button.btn.btn-success.m-1(type='submit') Login
                     hr
-                    button.btn.btn-info(type='button') Create new account
+                    button.btn.btn-info(type='button') Create new account 

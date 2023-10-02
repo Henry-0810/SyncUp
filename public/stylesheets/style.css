@@ -1,57 +1,9 @@
-/* Custom styles for the Simplex theme */
-legend {
-    font-family: "Inter";
-}
-/* Navbar styles */
-.navbar {
-    background-color: #333;
-    /* Dark background color */
-    color: #fff;
-    /* White text color */
-}
 
-/* Header styles */
-.header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
 
-/* Calendar container styles */
-.calendar-container {
-    background-color: #fff;
-    /* White background color */
-    border: 1px solid #ddd;
-    /* Light gray border */
-    padding: 20px;
-    border-radius: 5px;
-    /* Rounded corners */
-}
-
-/* Event styles */
-.event {
-    background-color: #f0ad4e;
-    /* Bootstrap warning color */
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 3px;
-    margin-bottom: 5px;
-}
-
-/* Button styles */
-.btn-primary {
-    background-color: #337ab7;
-    /* Bootstrap primary button color */
-    border-color: #2e6da4;
-    /* Bootstrap primary button border color */
-}
-
-/* Additional styles can be added as needed */
-
-/* Responsive styles for mobile devices */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    /* Adjust styles for smaller screens */
+    .col-md-6.col-sm-12 {
+        min-height: auto;
+        /* Remove minimum height for smaller screens */
+    }
 }
-
-/* Add your additional custom styles below this comment */
