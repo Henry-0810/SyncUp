@@ -22,9 +22,11 @@ html
                 | Friends
           ul.navbar-nav.ms-auto.d-flex.align-items-center
             li.nav-item
-              button.btn.btn-secondary(type='button') Login
+              a.nav-link.active(href='/login')
+                | Login
             li.nav-item
-              button.btn.btn-secondary.ms-2.ms-sm-3(type='button') Sign Up
+              a.nav-link.active(href='/signup')
+                | Sign Up
     block content
     script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js')
