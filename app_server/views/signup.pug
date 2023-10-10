@@ -1,0 +1,47 @@
+extends layout
+
+block content 
+    section.vh-100.gradient-custom
+        .container.py-5.h-100
+            .row.justify-content-center.align-items-center.h-100
+                .col-12.col-lg-9.col-xl-7
+                    .card.shadow-2-strong.card-registration(style='border-radius: 15px;')
+                        .card-body.p-4.p-md-5
+                            h3.mb-4.pb-2.pb-md-0.mb-md-5 Registration Form
+                            form
+                                .row
+                                    .col-md-6.mb-4
+                                        .form-outline
+                                            input#firstName.form-control.form-control-lg(type='text')
+                                            label.form-label(for='firstName') First Name
+                                    .col-md-6.mb-4
+                                        .form-outline
+                                            input#lastName.form-control.form-control-lg(type='text')
+                                            label.form-label(for='lastName') Last Name
+                                .row
+                                    .col-md-6.mb-4.d-flex.align-items-center
+                                            .form-outline.datepicker.w-100
+                                                input#birthdayDate.form-control.form-control-lg(type='text')
+                                                label.form-label(for='birthdayDate') Birthday
+                                    .col-md-6.mb-4
+                                        h6.mb-2.pb-1 Gender: 
+                                        .form-check.form-check-inline
+                                            input#femaleGender.form-check-input(type='radio', name='inlineRadioOptions', value='option1', checked='')
+                                            label.form-check-label(for='femaleGender') Female
+                                        .form-check.form-check-inline
+                                            input#maleGender.form-check-input(type='radio', name='inlineRadioOptions', value='option2')
+                                            label.form-check-label(for='maleGender') Male
+                                        .form-check.form-check-inline
+                                            input#otherGender.form-check-input(type='radio', name='inlineRadioOptions', value='option3')
+                                            label.form-check-label(for='otherGender') Other
+                                .row
+                                    .col-md-6.mb-4.pb-2
+                                        .form-outline
+                                            input#emailAddress.form-control.form-control-lg(type='email')
+                                            label.form-label(for='emailAddress') Email
+                                    .col-md-6.mb-4.pb-2
+                                        .form-outline
+                                            input#phoneNumber.form-control.form-control-lg(type='tel')
+                                            label.form-label(for='phoneNumber') Phone Number
+                                .mt-2.pt-2
+                                    input.btn.btn-primary.btn-lg(type='submit', value='Submit')
