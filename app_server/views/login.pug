@@ -1,17 +1,24 @@
 extends layout 
 
 block content
-  div.container-fluid
-    div.row.justify-content-center.m-5
-        div.col-md-6.col-sm-12.d-flex.flex-column.justify-content-center.align-items-center
-            form.border.border-1.rounded.text-center
-                div.m-5
-                    fieldset
-                    legend.fw-bold.mb-4 Login
-                    .form-group.m-3
-                        input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email', required='')
-                    .form-group.m-3
-                        input#exampleInputPassword1.form-control(type='password', placeholder='Password', autocomplete='off', required='')
-                    button.btn.btn-success.m-1(type='submit') Login
-                    hr
-                    button.btn.btn-info(type='button') Create new account 
+    .section.gradient-custom
+        .container.py-5.d-flex.flex-column.align-items-center.justify-content-center.h-100
+            .card.shadow-2-strong.card-login(style='border-radius: 15px;')
+                .card-body.p-4.p-md-5
+                    h3.mb-4.pb-2.pb-md-0.mb-md-5.text-center Login
+                    form.text-center
+                        .row.m-3
+                            .form-outline
+                                input#emailAddress.form-control.form-control-lg(type='email', aria-describedby='emailHelp', placeholder='Enter email', required='')
+                        .row.m-3
+                            .form-outline
+                                .d-flex.align-items-center.justify-content-between
+                                    input#password.form-control.form-control-lg(type='password', placeholder='Password', autocomplete='off', required='')
+                                input#showPassword.form-check-input(type='checkbox') 
+                                label.form-check-label(for='showPassword') Show Password
+                        button.btn.btn-primary.btn-lg.m-3(type='submit') Login
+                        hr
+                        button.btn.btn-info.btn-lg.m-3(type='button') Create new account
+
+
+

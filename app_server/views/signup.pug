@@ -1,7 +1,7 @@
 extends layout
 
 block content 
-    section.vh-100.gradient-custom
+    section.gradient-custom
         .container.py-5.h-100
             .row.justify-content-center.align-items-center.h-100
                 .col-12.col-lg-9.col-xl-7
@@ -21,8 +21,8 @@ block content
                                 .row
                                     .col-md-6.mb-4.d-flex.align-items-center
                                             .form-outline.datepicker.w-100
-                                                input#birthdayDate.form-control.form-control-lg(type='text')
-                                                label.form-label(for='birthdayDate') Birthday
+                                                input#birthdayDate.form-control.form-control-lg(type='date')
+                                                label.form-label(for='birthdayDate') Date of Birth
                                     .col-md-6.mb-4
                                         h6.mb-2.pb-1 Gender: 
                                         .form-check.form-check-inline
@@ -41,7 +41,8 @@ block content
                                             label.form-label(for='emailAddress') Email
                                     .col-md-6.mb-4.pb-2
                                         .form-outline
-                                            input#phoneNumber.form-control.form-control-lg(type='tel')
-                                            label.form-label(for='phoneNumber') Phone Number
+                                            input#password.form-control.form-control-lg(type='password')
+                                            label.form-label(for='password') Password
+                                hr
                                 .mt-2.pt-2
                                     input.btn.btn-primary.btn-lg(type='submit', value='Submit')
