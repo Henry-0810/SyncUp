@@ -1,14 +1,22 @@
 extends layout
 
 block content
-  .container
-    .card.text-white.bg-primary.m-auto.my-3(style='max-width: 80%;')
+  .container.d-flex.flex-row.align-items-center.gap-3
+    .card.text-white.bg-primary.m-3(style='max-width: 80%; flex: 9;')
       .card-header Your Calendar
       .card-body
         #calendar
       
       script(src="/javascripts/calendar.js")
 
-    .event-list
+    .event-list(style='flex:4;')
+      .card.text-white.bg-primary.m-3(style='max-width: 80%;')
+        .card-header Your Events
+        .card-body
+        ol
+          each event in events
+            li #{event.title} - #{event.start.substring(0,10)}
+          
+      
     
 
