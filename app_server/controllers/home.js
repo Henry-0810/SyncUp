@@ -1,5 +1,3 @@
-/* GET home page */
-
 const events = [
   {
     title: "Basketball Competition",
