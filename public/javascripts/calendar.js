@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     eventTextColor: "white",
     eventBackgroundColor: "#d6711e",
     eventBorderColor: "#d6711e",
+    handleWindowResize: true,
   });
   calendar.render();
   console.log("calendar.js loaded");

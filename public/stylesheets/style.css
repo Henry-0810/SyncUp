@@ -22,4 +22,12 @@ body {
         min-height: auto;
         /* Remove minimum height for smaller screens */
     }
+
+    .fc-header-toolbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 5px;
+    }
 }
+
