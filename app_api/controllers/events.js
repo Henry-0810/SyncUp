@@ -27,12 +27,14 @@ const eventsListByTime = function (req, res) {
 const eventReadOne = function (req, res) {
   console.log(req.params.eventId);
   const eventId = new ObjectId(req.params.eventId);
-  Event.find({ _id: req.params.eventId })
+  Event.findOne({ _id: eventId })
     .then((event) => {
       console.log(event);
-      return event
-        ? res.status(200).json(event)
-        : res.status(404).json({ message: "Event not found" });
+      if (event) {
+        res.status(200).json(event);
+      } else {
+        res.status(404).json({ message: "Event not found" });
+      }
     })
     .catch((err) => {
       console.error("Error in eventsReadOne: ", err);
