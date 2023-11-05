@@ -2,15 +2,29 @@ const mongoose = require("mongoose");
 const Event = mongoose.model("Event");
 const ObjectId = mongoose.Types.ObjectId;
 
-const eventsCreate = function (req, res) {
-  res.status(200).json({ status: "Created a new event" });
+const eventCreate = (req, res, next) => {
+  const newEvent = {
+    title: req.body.title,
+    description: req.body.description,
+    start: req.body.start,
+    end: req.body.end,
+  };
+
+  Event.create(newEvent)
+    .then((event) => {
+      res.status(200).json(event);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(400).json({ message: "Error creating event" });
+    });
 };
 
 const eventsListByTime = function (req, res) {
   res.status(200).json({ status: "Listed events by time" });
 };
 
-const eventsReadOne = function (req, res) {
+const eventReadOne = function (req, res) {
   console.log(req.params.eventId);
   const eventId = new ObjectId(req.params.eventId);
   Event.find({ _id: req.params.eventId })
@@ -26,17 +40,17 @@ const eventsReadOne = function (req, res) {
     });
 };
 
-const eventsUpdateOne = function (req, res) {
+const eventUpdateOne = function (req, res) {
   res.status(200).json({ status: "Update an event" });
 };
-const eventsDeleteOne = function (req, res) {
+const eventDeleteOne = function (req, res) {
   res.status(200).json({ status: "Delete an event" });
 };
 
 module.exports = {
-  eventsCreate,
+  eventCreate,
   eventsListByTime,
-  eventsReadOne,
-  eventsUpdateOne,
-  eventsDeleteOne,
+  eventReadOne,
+  eventUpdateOne,
+  eventDeleteOne,
 };

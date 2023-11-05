@@ -6,12 +6,12 @@ const ctrlEvents = require("../controllers/events");
 router
   .route("/events")
   .get(ctrlEvents.eventsListByTime)
-  .post(ctrlEvents.eventsCreate);
+  .post(ctrlEvents.eventCreate);
 
 router
   .route("/events/:eventId")
-  .get(ctrlEvents.eventsReadOne)
-  .put(ctrlEvents.eventsUpdateOne)
-  .delete(ctrlEvents.eventsDeleteOne);
+  .get(ctrlEvents.eventReadOne)
+  .put(ctrlEvents.eventUpdateOne)
+  .delete(ctrlEvents.eventDeleteOne);
 
 module.exports = router;
