@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Event = mongoose.model("Event");
-const ObjectId = mongoose.Types.ObjectId;
 
 const eventCreate = (req, res, next) => {
   const newEvent = {
@@ -25,21 +24,25 @@ const eventsListByTime = function (req, res) {
 };
 
 const eventReadOne = function (req, res) {
-  console.log(req.params.eventId);
-  const eventId = new ObjectId(req.params.eventId);
-  Event.findOne({ _id: eventId })
-    .then((event) => {
-      console.log(event);
-      if (event) {
-        res.status(200).json(event);
-      } else {
-        res.status(404).json({ message: "Event not found" });
+  if (req.params && req.params.eventId) {
+    Event.findById(req.params.eventId).then((activity, err) => {
+      console.log(activity);
+      if (!activity) {
+        res.status(404).json({
+          message: "eventid not found",
+        });
+        return;
+      } else if (err) {
+        res.status(404).json(err);
+        return;
       }
-    })
-    .catch((err) => {
-      console.error("Error in eventsReadOne: ", err);
-      res.status(500).json({ message: "Internal server error" });
+      res.status(200).json(activity);
     });
+  } else {
+    res.status(404).json({
+      message: "No eventid in request",
+    });
+  }
 };
 
 const eventUpdateOne = function (req, res) {
