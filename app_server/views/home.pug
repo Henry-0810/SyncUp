@@ -2,13 +2,23 @@ extends layout
 
 block content
   .container.d-flex.flex-column-reverse.flex-md-row.align-items-center.gap-3
-    .event-list(style='flex:4;')
-      .card.text-white.bg-primary.m-3(style='max-width: 100%;')
-        .card-header Your Events
-        .card-body
-          ol
-            each event in events
-              li #{event.title} - #{event.start.substring(0, 10)}
+    .container(style='flex:4;')
+      .event-list
+        .card.text-white.bg-primary.m-3(style='max-width: 100%;')
+          .card-header Your Events
+          .card-body
+            ol
+              each event in events
+                li #{event.title} - #{event.start.substring(0, 10)}
+
+      .friend-list
+        .card.text-white.bg-primary.m-3(style='max-width: 100%;')
+          .card-header Your Friends
+          .card-body
+            |James Oliver
+            |John Smith
+            |Jane Doe
+            |John Doe
 
     .card.text-white.bg-primary.m-3(style='max-width: 100%; flex: 9;')
       .card-header Your Calendar
