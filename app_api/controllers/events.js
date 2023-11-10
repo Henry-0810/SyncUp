@@ -30,18 +30,15 @@ const eventCreate = (req, res, next) => {
 
 const eventReadOne = function (req, res) {
   if (req.params && req.params.eventId) {
-    Event.findById(req.params.eventId).then((activity, err) => {
-      console.log(activity);
-      if (!activity) {
+    Event.findById(req.params.eventId).then((event, err) => {
+      console.log(event);
+      if (!event || err) {
         res.status(404).json({
           message: "eventid not found",
         });
         return;
-      } else if (err) {
-        res.status(404).json(err);
-        return;
       }
-      res.status(200).json(activity);
+      res.status(200).json(event);
     });
   } else {
     res.status(404).json({

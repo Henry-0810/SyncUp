@@ -15,10 +15,9 @@ block content
         .card.text-white.bg-primary.m-3(style='max-width: 100%;')
           .card-header Your Friends
           .card-body
-            |James Oliver
-            |John Smith
-            |Jane Doe
-            |John Doe
+            ol
+              each friend in friends
+                li #{friend.first_name} #{friend.last_name}
 
     .card.text-white.bg-primary.m-3(style='max-width: 100%; flex: 9;')
       .card-header Your Calendar
@@ -26,8 +25,3 @@ block content
         #calendar
 
     script(src="/javascripts/calendar.js")
-
-          
-      
-    
-

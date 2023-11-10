@@ -1,34 +1,35 @@
-const events = [
-  {
-    title: "Basketball Competition",
-    description: "Versus the Lakers",
-    start: "2023-10-24T16:00:00",
-    end: "2023-10-24T18:00:00",
-  },
-  {
-    title: "Halloween Preparation",
-    description: "Party preparation for Halloween",
-    start: "2023-10-28",
-    end: "2023-10-30",
-  },
-  {
-    title: "Report Submission",
-    description: "Report submission for algorithms",
-    start: "2023-10-11T23:00:00",
-  },
-  {
-    title: "Coffee with John",
-    start: "2023-11-12T10:30:00",
-  },
-  {
-    title: "Lunch with family",
-    start: "2023-11-17T13:00:00",
-  },
-];
+const { get } = require("jquery");
 
-const home = function (req, res) {
-  res.render("home", { title: "Sync Up", events });
-};
+function getCollection(collectionName) {
+  const url =
+    process.env.NODE_ENV === "production"
+      ? "#"
+      : `http://localhost:3000/api/${collectionName}`;
+
+  return fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok.");
+      }
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+      return []; // Return an empty array or handle the error as needed
+    });
+}
+
+async function home(req, res) {
+  try {
+    const events = await getCollection("events");
+    console.log(events);
+    const friends = await getCollection("friends");
+    console.log(friends);
+    res.render("home", { title: "Sync Up", events, friends });
+  } catch (error) {
+    res.status(500).send("Internal Server Error");
+  }
+}
 
 module.exports = {
   home,

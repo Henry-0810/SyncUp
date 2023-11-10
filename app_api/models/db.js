@@ -15,3 +15,4 @@ try {
 }
 
 require("./events");
+require("./friends");
