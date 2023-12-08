@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const ctrlEvents = require("../controllers/events");
 const ctrlFriends = require("../controllers/friends");
+const ctrlUsers = require("../controllers/users");
 
 //friends
 router
@@ -26,5 +27,10 @@ router
   .get(ctrlEvents.eventReadOne)
   .put(ctrlEvents.eventUpdateOne)
   .delete(ctrlEvents.eventDeleteOne);
+
+//users
+router.route("/users/sign-up").post(ctrlUsers.signup);
+router.route("/users/login").post(ctrlUsers.login);
+router.route("/users/logout").get(ctrlUsers.logout);
 
 module.exports = router;

@@ -16,3 +16,4 @@ try {
 
 require("./events");
 require("./friends");
+require("./users");
